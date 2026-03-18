@@ -15,7 +15,9 @@
  */
 
 #pragma once
+
 #include "config.h"
+#include "eeconfig_custom_rgb.h"
 
 #ifndef EFFECT_LAYERS
 #    define EFFECT_LAYERS 2

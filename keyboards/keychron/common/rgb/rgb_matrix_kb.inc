@@ -18,21 +18,24 @@
 
 #if defined(KEYCHRON_RGB_ENABLE) && defined(EECONFIG_SIZE_CUSTOM_RGB)
 
-RGB_MATRIX_EFFECT(PER_KEY_RGB)
-RGB_MATRIX_EFFECT(MIXED_RGB)
-
+/*
+ * QMK's RGB Matrix core includes this file in a pass where it defines
+ * RGB_MATRIX_CUSTOM_EFFECT_IMPLS. During that pass this file expands into
+ * switch/call sites for the custom effects, so we must provide prototypes to
+ * avoid implicit function declarations (-Werror).
+ *
+ * This makes rgb_matrix_kb.inc the single source of truth:
+ * - Effect list (RGB_MATRIX_EFFECT)
+ * - Corresponding function prototypes
+ */
 #    ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
-
-bool PER_KEY_RGB(effect_params_t *params) {
-    extern bool per_key_rgb(effect_params_t * params);
-    return per_key_rgb(params);
-}
-
-bool MIXED_RGB(effect_params_t *params) {
-    extern bool mixed_rgb(effect_params_t * params);
-    return mixed_rgb(params);
-}
-
+extern bool HALF_PURPLE(effect_params_t *params);
+extern bool HALF_BLUE(effect_params_t *params);
+extern bool WHITE_WAVE(effect_params_t *params);
 #    endif
+
+RGB_MATRIX_EFFECT(HALF_PURPLE)
+RGB_MATRIX_EFFECT(HALF_BLUE)
+RGB_MATRIX_EFFECT(WHITE_WAVE)
 
 #endif
