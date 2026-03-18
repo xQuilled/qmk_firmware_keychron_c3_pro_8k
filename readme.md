@@ -6,6 +6,21 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/pulse/monthly)
 [![GitHub forks](https://img.shields.io/github/forks/qmk/qmk_firmware.svg?style=social&label=Fork)](https://github.com/qmk/qmk_firmware/)
 
+This is a fork of the Keychron fork of the QMK firmware specifically supporting the Keychron C3 Pro 8K Keyboard. This fork removes the default RGB effects and modifies the source to add some custom user created effects.
+Effects are located in [keyboards/keychron/common/rgb/custom_effects.c](keyboards/keychron/common/rgb/custom_effects.c)
+
+Some quickstart commands (assuming qmk is installed):
+
+```sh
+qmk setup
+qmk config user.keyboard=keychron/c3_pro_8k/ansi
+qmk config user.keymap=default
+qmk compile
+qmk flash
+```
+
+***
+
 This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github.com/tmk/tmk_keyboard) with some useful features for Atmel AVR and ARM controllers, and more specifically, the [OLKB product line](https://olkb.com), the [ErgoDox EZ](https://ergodox-ez.com) keyboard, and the Clueboard product line.
 
 ## Documentation
@@ -15,17 +30,6 @@ This is a keyboard firmware based on the [tmk\_keyboard firmware](https://github
 The docs are powered by [VitePress](https://vitepress.dev/). They are also viewable offline; see [Previewing the Documentation](https://docs.qmk.fm/#/contributing?id=previewing-the-documentation) for more details.
 
 You can request changes by making a fork and opening a [pull request](https://github.com/qmk/qmk_firmware/pulls).
-
-## Supported Keyboards
-
-* [Planck](/keyboards/planck/)
-* [Preonic](/keyboards/preonic/)
-* [ErgoDox EZ](/keyboards/ergodox_ez/)
-* [Clueboard](/keyboards/clueboard/)
-* [Cluepad](/keyboards/clueboard/17/)
-* [Atreus](/keyboards/atreus/)
-
-The project also includes community support for [lots of other keyboards](/keyboards/).
 
 ## Maintainers
 
